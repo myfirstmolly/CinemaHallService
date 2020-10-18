@@ -18,27 +18,27 @@ import java.util.UUID;
 public class HallController {
 
     @Autowired
-    private HallsService cinemaService;
+    private HallsService hallService;
 
     @PostMapping
     public Hall createHall(@RequestBody Hall hall) {
-        return cinemaService.addHall(hall);
+        return hallService.addHall(hall);
     }
 
     @GetMapping
     public List<Hall> getAllHalls() {
-        return cinemaService.getAll();
+        return hallService.getAll();
     }
 
     @GetMapping(path = "{hallId}")
     public Hall getHallById(@PathVariable(value = "hallId") UUID id) {
-        Hall hall = cinemaService.getById(id);
+        Hall hall = hallService.getById(id);
         return hall;
     }
 
     @DeleteMapping(path = "{hallId}")
     public ResponseEntity<Void> deleteHall(@PathVariable(value = "hallId") UUID id)  {
-        cinemaService.deleteHallById(id);
+        hallService.deleteHallById(id);
         return ResponseEntity.noContent().build();
     }
 
