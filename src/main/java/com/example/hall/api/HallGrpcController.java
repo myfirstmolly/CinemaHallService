@@ -46,6 +46,13 @@ public class HallGrpcController extends HallServiceGrpc.HallServiceImplBase {
     }
 
     @Override
+    public void byName(HallByNameRequest request, StreamObserver<HallResponse> responseObserver) {
+        Hall hall = hallsService.getByName(request.getName());
+        responseObserver.onNext(hall.toHallResponse());
+        responseObserver.onCompleted();
+    }
+
+    @Override
     public void delete(HallByIdRequest request, StreamObserver<DeleteHallResponse> responseObserver) {
         hallsService.deleteHallById(UUID.fromString(request.getId()));
         responseObserver.onNext(DeleteHallResponse.newBuilder().build());
