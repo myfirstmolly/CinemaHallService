@@ -1,7 +1,8 @@
 package com.example.hall.model;
 
+import com.example.hall.HallRequest;
+import com.example.hall.HallResponse;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.Column;
@@ -12,7 +13,6 @@ import java.util.UUID;
 @EnableAutoConfiguration
 @Entity
 @Data
-@NoArgsConstructor
 public final class Hall {
 
     @Id
@@ -24,11 +24,30 @@ public final class Hall {
     private int linesNum;
     private int seatsNum;
 
-    public Hall(String name, int linesNum, int seatsNum) {
+    public Hall() {
         hallId = UUID.randomUUID();
+    }
+
+    public Hall(UUID hallId, String name, int linesNum, int seatsNum) {
+        this.hallId = hallId;
         this.name = name;
         this.linesNum = linesNum;
         this.seatsNum = seatsNum;
+    }
+
+    public static Hall fromHallRequest(HallRequest hallRequest) {
+        return new Hall(UUID.randomUUID(),
+                hallRequest.getName(),
+                hallRequest.getLinesNum(),
+                hallRequest.getSeatsNum());
+    }
+
+    public HallResponse toHallResponse() {
+        return HallResponse.newBuilder().
+                setId(hallId.toString()).
+                setLinesNum(linesNum).
+                setSeatsNum(seatsNum).
+                build();
     }
 
 }

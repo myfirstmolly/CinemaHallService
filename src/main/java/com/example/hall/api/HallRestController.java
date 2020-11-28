@@ -15,7 +15,7 @@ import java.util.UUID;
 @RequestMapping("/hall")
 @AllArgsConstructor
 @NoArgsConstructor
-public class HallController {
+public class HallRestController {
 
     @Autowired
     private HallsService hallService;
