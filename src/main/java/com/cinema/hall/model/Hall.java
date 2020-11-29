@@ -1,7 +1,7 @@
-package com.example.hall.model;
+package com.cinema.hall.model;
 
-import com.example.hall.HallRequest;
-import com.example.hall.HallResponse;
+import com.cinema.hall.HallRequest;
+import com.cinema.hall.HallResponse;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 

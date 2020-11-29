@@ -1,6 +1,6 @@
-package com.example.hall.service;
+package com.cinema.hall.service;
 
-import com.example.hall.model.Hall;
+import com.cinema.hall.model.Hall;
 
 import java.util.List;
 import java.util.UUID;

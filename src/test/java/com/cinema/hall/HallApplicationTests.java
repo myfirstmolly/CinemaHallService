@@ -1,4 +1,4 @@
-package com.example.hall;
+package com.cinema.hall;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

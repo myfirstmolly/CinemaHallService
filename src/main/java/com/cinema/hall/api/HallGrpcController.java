@@ -1,8 +1,8 @@
-package com.example.hall.api;
+package com.cinema.hall.api;
 
-import com.example.hall.*;
-import com.example.hall.model.Hall;
-import com.example.hall.service.HallsService;
+import com.cinema.hall.*;
+import com.cinema.hall.model.Hall;
+import com.cinema.hall.service.HallsService;
 import io.grpc.stub.StreamObserver;
 import org.lognet.springboot.grpc.GRpcService;
 import org.springframework.beans.factory.annotation.Autowired;

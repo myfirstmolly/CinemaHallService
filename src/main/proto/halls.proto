@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.example.hall;
+package com.cinema.hall;
 option java_multiple_files = true;
 
 message HallResponse {
